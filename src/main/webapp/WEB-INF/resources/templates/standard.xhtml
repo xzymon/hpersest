@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title><ui:insert name="pageTitle"></ui:insert></title>
+	<h:outputStylesheet library="css" name="standard.css" />
+</h:head>
+<h:body>
+	<div id="container">
+		<div id="topimg">
+			<ui:include src="/WEB-INF/sections/top/loginDiv.xhtml" />
+		</div>
+		<div id="navcontainer">
+			<ui:include src="/WEB-INF/sections/top/navigationBar.xhtml" />
+		</div>
+		<div style="clear: both;"></div>
+		<div id="sidebar">
+			<ui:include src="/WEB-INF/sections/left/sidebar.xhtml" />
+		</div>
+		<div id="content">
+			<h1>
+				<ui:insert name="topTitle">
+				Welcome to <span style="color: #9C386A;">Standard</span> Template
+				</ui:insert>
+			</h1>
+			<ui:insert name="contentPanel">
+				<blockquote>
+					<p>
+						All images were created by me so feel free to use them if you
+						wish. The page has been tested in Mozilla and IE7. The page
+						validates as Valid XHTML 1.0 Strict using valid CSS. The side menu
+						is from <a href="http://css.maxdesign.com.au/listamatic/"
+							title="CSS menus">Listamatic</a>. <br /> For more FREE templates
+						visit <a href="http://www.mitchinson.net" title="my website">my
+							website</a>.
+					</p>
+				</blockquote>
+				<h1>Article One</h1>
+				<p>
+					This is a <a href="#">link</a> to nowhere.
+				</p>
+				<p class="post align-right">
+					<a href="#" class="readmore">Read more</a> <a href="#"
+						class="comments">Comments (3)</a> <span class="date">March
+						28, 2007</span>
+				</p>
+				<h1>Article Two</h1>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+				<div
+					style="float: right; width: 120px; height: 5em; margin: 20px 10px 10px 10px; font-family: Georgia, arial, helvetica; font-size: 16px; line-height: 1.5em; color: #336633;">
+					<span style="color: #333;"><img src="img/quote.gif"
+						alt="quote" />.... this is a </span><span style="color: #336633;">magazine
+						style </span><span style="color: #999;">pullquote .... <img
+						src="img/unquote.gif" alt="unquote" /></span>
+				</div>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+				<p class="post align-right">
+					<a href="#" class="readmore">Read more</a> <a href="#"
+						class="comments">Comments (3)</a> <span class="date">March
+						28, 2007</span>
+				</p>
+			</ui:insert>
+		</div>
+		<div id="footer">
+			<a href="mailto:xzymon@gmail.com">contact</a> | <a
+				href="http://validator.w3.org/check?uri=referer">html</a> | <a
+				href="http://jigsaw.w3.org/css-validator">css</a> | &copy; 2015
+			Szymon Ignaciuk | Design by <a href="http://www.mitchinson.net">
+				www.mitchinson.net</a><br /> This work is licensed under a <a
+				rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative
+				Commons Attribution 3.0 License</a>
+		</div>
+
+	</div>
+</h:body>
+</html>

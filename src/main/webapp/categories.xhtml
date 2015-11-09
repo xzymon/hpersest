@@ -16,26 +16,18 @@
 		<ui:define name="topTitle"></ui:define>
 		
 		<ui:define name="contentPanel">
-			<h:dataTable value="#{storeBean.stores}" var="tableBean" rowClasses="odd, even">
+			<h:dataTable value="#{categoryBean.categories}" var="tableBean" rowClasses="odd, even">
 				<h:column>
-					<f:facet name="header">#{msgs['dataTable.stores.header.id']}</f:facet>
+					<f:facet name="header">#{msgs['dataTable.categories.header.id']}</f:facet>
 					#{tableBean.id}
 				</h:column>
 				<h:column>
-					<f:facet name="header">#{msgs['dataTable.stores.header.name']}</f:facet>
+					<f:facet name="header">#{msgs['dataTable.categories.header.name']}</f:facet>
 					#{tableBean.name}
 				</h:column>
 				<h:column>
-					<f:facet name="header">#{msgs['dataTable.stores.header.city']}</f:facet>
-					#{tableBean.city}
-				</h:column>
-				<h:column>
-					<f:facet name="header">#{msgs['dataTable.stores.header.street']}</f:facet>
-					#{tableBean.street}
-				</h:column>
-				<h:column>
-					<f:facet name="header">#{msgs['dataTable.stores.header.number']}</f:facet>
-					#{tableBean.number}
+					<f:facet name="header">#{msgs['dataTable.categories.header.code']}</f:facet>
+					#{tableBean.code}
 				</h:column>
 			</h:dataTable>
 		</ui:define>

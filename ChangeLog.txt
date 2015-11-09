@@ -1,3 +1,8 @@
+v 0.0.2-SNAPSHOT
+ - added view /categories.xhtml
+ - added view /stores.xhtml
+ - added view /units.xhtml
+
 v 0.0.1
 Project initialized
  - Servlet 3.0 + Hibernate 4.3.8 + CDI 1.2 + JSF 2.2 ( + LogBack 1.1.3)

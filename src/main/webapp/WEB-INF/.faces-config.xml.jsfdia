@@ -8,4 +8,47 @@
     PATH="/index.xhtml" TARGET="rules:#index.xhtml" TITLE="home" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules::1" SHAPE="32,129,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::1" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="categories::#categories.xhtml" NAME="output"
+    PATH="/categories.xhtml" TARGET="rules:#categories.xhtml"
+    TITLE="categories" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#categories.xhtml" PATH="/categories.xhtml"
+  SHAPE="240,145,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#categories.xhtml:0" NAME="item"
+   PATH="/categories.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="categories-create::#categories-create.xhtml"
+    NAME="output" PATH="/categories-create.xhtml"
+    TARGET="rules:#categories-create.xhtml" TITLE="categories-create" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules::2" SHAPE="32,241,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::2" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="stores::#stores.xhtml" NAME="output"
+    PATH="/stores.xhtml" TARGET="rules:#stores.xhtml" TITLE="stores" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules::3" SHAPE="32,353,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::3" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="units::#units.xhtml" NAME="output"
+    PATH="/units.xhtml" TARGET="rules:#units.xhtml" TITLE="units" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#units.xhtml" PATH="/units.xhtml"
+  SHAPE="240,369,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#stores.xhtml" PATH="/stores.xhtml"
+  SHAPE="240,257,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#stores.xhtml:0" NAME="item"
+   PATH="/stores.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="stores-create::#stores-create.xhtml"
+    NAME="output" PATH="/stores-create.xhtml"
+    TARGET="rules:#stores-create.xhtml" TITLE="stores-create" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#stores-create.xhtml"
+  PATH="/stores-create.xhtml" SHAPE="448,241,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#categories-create.xhtml"
+  PATH="/categories-create.xhtml" SHAPE="448,129,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

@@ -4,19 +4,21 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:c="http://java.sun.com/jsp/jstl/core">
-	
-	<ui:composition template="/WEB-INF/resources/templates/standard.xhtml">
-	
-		<ui:define name="pageTitle">
-			
-		</ui:define>
-	
-		<ui:define name="leftPanel"></ui:define>
-		
-		<ui:define name="topTitle"></ui:define>
-		
-		<ui:define name="contentPanel">
-			<h:dataTable value="#{categoryBean.categories}" var="tableBean" rowClasses="odd, even">
+
+<ui:composition template="/WEB-INF/resources/templates/standard.xhtml">
+
+	<ui:define name="pageTitle">
+
+	</ui:define>
+
+	<ui:define name="leftPanel"></ui:define>
+
+	<ui:define name="topTitle"></ui:define>
+
+	<ui:define name="contentPanel">
+		<h:form>
+			<h:dataTable value="#{categoryBean.categories}" var="tableBean"
+				rowClasses="odd, even">
 				<h:column>
 					<f:facet name="header">#{msgs['dataTable.categories.header.id']}</f:facet>
 					#{tableBean.id}
@@ -29,8 +31,18 @@
 					<f:facet name="header">#{msgs['dataTable.categories.header.code']}</f:facet>
 					#{tableBean.code}
 				</h:column>
+				<h:column>
+					<f:facet name="header">#{msgs['actions.category.header']}</f:facet>
+					<h:commandLink
+						action="#{categoryBean.gotoUpdateCategory(tableBean)}"
+						value="#{msgs['update.category.button']}" />
+					<h:commandLink action="#{categoryBean.deleteCategory(tableBean)}"
+						value="#{msgs['delete.category.link']}" />
+				</h:column>
 			</h:dataTable>
-		</ui:define>
-	</ui:composition>
+		</h:form>
+		<h:button outcome="categories-create" value="#{msgs['create.category.button']}"/>
+	</ui:define>
+</ui:composition>
 
 </html>

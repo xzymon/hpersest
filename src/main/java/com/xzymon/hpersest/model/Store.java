@@ -11,14 +11,6 @@ import javax.persistence.Table;
 public class Store {
 	@Id
 	@GeneratedValue(generator="ID_GENERATOR")
-	@org.hibernate.annotations.GenericGenerator(
-		name = "ID_GENERATOR", 
-		strategy = "enhanced-sequence",
-		parameters = {
-			@org.hibernate.annotations.Parameter(name="sequence_name", value="XZYMON_SEQUENCE"),
-			@org.hibernate.annotations.Parameter(name="initial_value", value="1000")
-		}
-	)
 	@Column(name="id_sklepu")
 	private Long id;
 	@Column(name="nazwa", nullable=false, length=80)
@@ -36,6 +28,10 @@ public class Store {
 
 	public Long getId() {
 		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 	public String getName() {

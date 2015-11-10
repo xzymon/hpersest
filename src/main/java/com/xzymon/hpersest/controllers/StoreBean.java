@@ -17,8 +17,10 @@ public class StoreBean {
 	@Inject
 	private Session session;
 	
+	private Store store;
+	
 	public StoreBean() {
-		// TODO Auto-generated constructor stub
+		this.store = new Store();
 	}
 	
 	public List<Store> getStores(){
@@ -27,7 +29,37 @@ public class StoreBean {
 		session.getTransaction().commit();
 		return result;
 	}
-
+	
+	public Store getStore(){
+		return store;
+	}
+	
+	public String createStore(){
+		session.beginTransaction();
+		session.persist(this.store);
+		session.getTransaction().commit();
+		return "stores";
+	}
+	
+	public String deleteStore(Store store){
+		session.beginTransaction();
+		session.delete(store);
+		session.getTransaction().commit();
+		return "stores";
+	}
+	
+	public String gotoUpdateStore(Store store){
+		this.store = store;
+		return "stores-create";
+	}
+	
+	public String updateStore(){
+		session.beginTransaction();
+		session.update(store);
+		session.getTransaction().commit();
+		return "stores";
+	}
+	
 	@PreDestroy
 	public void closeSession(){
 		session.close();

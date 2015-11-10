@@ -21,6 +21,12 @@
   <property name="show_sql">true</property>
   <!-- Drop and re-create the database schema on startup -->
   <property name="hbm2ddl.auto">update</property>
+  <!-- mapping package - powoduje wczytanie mapowań package-level -->
+  <!-- mapping package wskazuje się package - nie konkretny plik -->
+  <!-- poniższe powoduje wczytanie package-info.java -->
+  <mapping package="com.xzymon.hpersest.model"/>
+  <mapping class="com.xzymon.hpersest.model.Category"/>
   <mapping class="com.xzymon.hpersest.model.Store"/>
+  <mapping class="com.xzymon.hpersest.model.Unit"/>
  </session-factory>
 </hibernate-configuration>

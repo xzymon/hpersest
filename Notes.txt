@@ -1,3 +1,6 @@
 Explanation of some properties in POM file:
  - webserver.systempath is path used by "mvn war:war" plugin to output generated WAR file (and intentionally Tomcat7 webapps directory)
- 
+
+Przy wykonywaniu UPDATE Categories jak i Stores pojawia się błąd (WELD nie może zamknąć sesji Hibernate (?)).
+Wcześniej, gdy było to zaimplementowane tylko dla Stores nie było takiego błędu.
+ -> Spróbować wycofać zmiany i sprawdzić czy gdy aplikacja będzie realizowała UPDATE tylko dla Stores czy będzie się udawać.

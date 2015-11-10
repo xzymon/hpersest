@@ -14,10 +14,48 @@
 	</application>
 	
 	<navigation-rule>
+		<from-view-id>/categories.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>categories-create</from-outcome>
+			<to-view-id>/categories-create.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/stores.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>stores-create</from-outcome>
+			<to-view-id>/stores-create.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
 		<from-view-id></from-view-id>
 		<navigation-case>
 			<from-outcome>home</from-outcome>
 			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id></from-view-id>
+		<navigation-case>
+			<from-outcome>categories</from-outcome>
+			<to-view-id>/categories.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id></from-view-id>
+		<navigation-case>
+			<from-outcome>stores</from-outcome>
+			<to-view-id>/stores.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id></from-view-id>
+		<navigation-case>
+			<from-outcome>units</from-outcome>
+			<to-view-id>/units.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 </faces-config>

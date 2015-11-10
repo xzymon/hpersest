@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	
+	<ui:composition template="/WEB-INF/resources/templates/standard.xhtml">
+	
+		<ui:define name="pageTitle">
+			
+		</ui:define>
+	
+		<ui:define name="leftPanel"></ui:define>
+		
+		<ui:define name="topTitle"></ui:define>
+		
+		<ui:define name="contentPanel">
+			<h:form>
+				<h:inputHidden value="#{storeBean.store.id}" rendered="#{storeBean.store.id ne null}"/>
+				<h:panelGrid columns="2">
+					<h:outputLabel value="#{msgs['common.store.name.label']}" />
+					<h:inputText value="#{storeBean.store.name}" />
+					<h:outputLabel value="#{msgs['common.store.city.label']}" />
+					<h:inputText value="#{storeBean.store.city}" />
+					<h:outputLabel value="#{msgs['common.store.street.label']}" />
+					<h:inputText value="#{storeBean.store.street}" />
+					<h:outputLabel value="#{msgs['common.store.number.label']}" />
+					<h:inputText value="#{storeBean.store.number}" />
+				</h:panelGrid>
+				<h:commandButton action="#{storeBean.createStore()}" value="#{msgs['create.store.button']}" rendered="#{storeBean.store.id eq null}"/>
+				<h:commandButton action="#{storeBean.updateStore()}" value="#{msgs['update.store.button']}" rendered="#{storeBean.store.id ne null}"/>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+
+</html>

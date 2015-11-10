@@ -1,6 +1,9 @@
-v 0.0.2-SNAPSHOT
+v 0.0.2-SNAPSHOT1
+ - package-level hibernate sequence XZYMON_SEQUENCE
  - added view /categories.xhtml
+ - added view /categories-create.xhtml
  - added view /stores.xhtml
+ - added view /stores-create.xhtml
  - added view /units.xhtml
 
 v 0.0.1

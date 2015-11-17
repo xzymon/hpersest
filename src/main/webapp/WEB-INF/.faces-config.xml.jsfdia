@@ -48,7 +48,16 @@
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#stores-create.xhtml"
-  PATH="/stores-create.xhtml" SHAPE="448,241,0,0" model-entity="JSFProcessGroup"/>
+  PATH="/stores-create.xhtml" SHAPE="448,241,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#stores-create.xhtml:0" NAME="item"
+   PATH="/stores-create.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="stores-create::#stores-create.xhtml"
+    NAME="output" PATH="/stores-create.xhtml"
+    TARGET="rules:#stores-create.xhtml" TITLE="stores-create" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="stores::#stores.xhtml" NAME="output1"
+    PATH="/stores.xhtml" TARGET="rules:#stores.xhtml" TITLE="stores" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#categories-create.xhtml"
   PATH="/categories-create.xhtml" SHAPE="448,129,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

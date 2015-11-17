@@ -4,3 +4,18 @@ Explanation of some properties in POM file:
 Przy wykonywaniu UPDATE Categories jak i Stores pojawia się błąd (WELD nie może zamknąć sesji Hibernate (?)).
 Wcześniej, gdy było to zaimplementowane tylko dla Stores nie było takiego błędu.
  -> Spróbować wycofać zmiany i sprawdzić czy gdy aplikacja będzie realizowała UPDATE tylko dla Stores czy będzie się udawać.
+ 
+
+0.0.2-SNAPSHOT1 (albo SNAPSHOT2?)
+Analiza problemu:
+Weld nie może wykonać session.close() ponieważ nie ma dostępu do session.
+Session jest pobierany z FacesContext, a FacesContext daje null.
+
+Możliwe rozwiązania: 
+  Ustalić: Dlaczego FacesContext jest null przy próbie wykonania update?
+  Czy da się dobrać do ServletContext bez pośrednictwa FacesContext ? 
+
+Po ustawieniu bezpośredniego wstrzykiwania ServletContext zamiast FacesContext problem zamykania Session został rozwiązany.
+
+Jednakże po usunięciu powyższego problemu nie działa update, nie ma też żadnej informacji o wyjątkach.
+Po prostu nic się nie dzieje.

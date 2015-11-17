@@ -65,4 +65,11 @@ public class Store {
 	public void setNumber(String number) {
 		this.number = number;
 	}
+
+	@Override
+	public String toString() {
+		return "Store [id=" + id + ", name=" + name + ", city=" + city + ", street=" + street + ", number=" + number
+				+ "]";
+	}
+	
 }

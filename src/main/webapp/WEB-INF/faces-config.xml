@@ -30,6 +30,18 @@
 	</navigation-rule>
 	
 	<navigation-rule>
+		<from-view-id>/stores-create.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>stores-create</from-outcome>
+			<to-view-id>/stores-create.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>stores</from-outcome>
+			<to-view-id>/stores.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
 		<from-view-id></from-view-id>
 		<navigation-case>
 			<from-outcome>home</from-outcome>

@@ -1,3 +1,6 @@
+v 0.0.2-SNAPSHOT3 store update problem
+ - WHY action which should cause StoreBean.updateStore() does StoreBean.createStore() instead ?
+
 v 0.0.2-SNAPSHOT2
  - using ServletContext (instead of FacesContext) to get Session from ServletContext attributes map
  - using injected Logger to log from StoreBean

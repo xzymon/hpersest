@@ -28,7 +28,9 @@
 					<h:outputLabel value="#{msgs['common.store.number.label']}" />
 					<h:inputText value="#{storeBean.store.number}" />
 				</h:panelGrid>
+				<!-- 
 				<h:commandButton action="#{storeBean.createStore()}" value="#{msgs['create.store.button']}" rendered="#{storeBean.store.id eq null}"/>
+				 -->
 				<h:commandButton action="#{storeBean.updateStore()}" value="#{msgs['update.store.button']}" rendered="#{storeBean.store.id ne null}"/>
 			</h:form>
 		</ui:define>

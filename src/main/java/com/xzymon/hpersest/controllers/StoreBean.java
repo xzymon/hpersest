@@ -68,7 +68,8 @@ public class StoreBean {
 		logger.info("method updateStore: before beginTransaction");
 		session.beginTransaction();
 		logger.info("method updateStore: transaction began");
-		Store toUpdate = new Store();
+		Store toUpdate = (Store) session.get(Store.class, store.getId());
+		logger.info("method updateStore: transaction began");
 		toUpdate.setId(store.getId());
 		toUpdate.setName(store.getName());
 		toUpdate.setCity(store.getCity());

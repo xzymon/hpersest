@@ -30,8 +30,9 @@
 				</h:panelGrid>
 				<!-- 
 				<h:commandButton action="#{storeBean.createStore()}" value="#{msgs['create.store.button']}" rendered="#{storeBean.store.id eq null}"/>
-				 -->
 				<h:commandButton action="#{storeBean.updateStore()}" value="#{msgs['update.store.button']}" rendered="#{storeBean.store.id ne null}"/>
+				 -->
+				<h:commandButton action="#{storeBean.update()}" value="#{msgs['update.store.button']}" rendered="#{storeBean.store.id ne null}"/>
 			</h:form>
 		</ui:define>
 	</ui:composition>

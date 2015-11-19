@@ -60,4 +60,12 @@
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#categories-create.xhtml"
   PATH="/categories-create.xhtml" SHAPE="448,129,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules::4" SHAPE="32,497,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::4" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="tests::#tests.xhtml" NAME="output"
+    PATH="/tests.xhtml" TARGET="rules:#tests.xhtml" TITLE="tests" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#tests.xhtml" PATH="/tests.xhtml"
+  SHAPE="240,513,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

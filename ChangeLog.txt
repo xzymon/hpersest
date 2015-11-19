@@ -1,3 +1,6 @@
+v 0.0.2-SNAPSHOT4 updating from tests view
+ - analyse task flow - how does it work, and why it works different from intention
+
 v 0.0.2-SNAPSHOT3 store update problem
  - WHY action which should cause StoreBean.updateStore() does StoreBean.createStore() instead ?
 

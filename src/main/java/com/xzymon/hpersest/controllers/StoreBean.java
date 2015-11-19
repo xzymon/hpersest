@@ -24,7 +24,7 @@ public class StoreBean {
 	private Store store;
 	
 	public StoreBean() {
-		this.store = new Store();
+		this.store = new Store("", "", "", "");
 	}
 	
 	public List<Store> getStores(){
@@ -80,6 +80,11 @@ public class StoreBean {
 		logger.info("method updateStore: about to commit transaction");
 		session.getTransaction().commit();
 		logger.info("method updateStore: after transaction commit");
+		return "stores";
+	}
+	
+	public String update(){
+		logger.info("method update:");
 		return "stores";
 	}
 	

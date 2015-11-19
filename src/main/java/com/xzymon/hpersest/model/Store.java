@@ -26,6 +26,13 @@ public class Store {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Store(String name, String city, String street, String number) {
+		this.name = name;
+		this.city = city;
+		this.street = street;
+		this.number = number;
+	}
+	
 	public Long getId() {
 		return id;
 	}

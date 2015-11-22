@@ -23,6 +23,12 @@
     NAME="output" PATH="/category-create.xhtml"
     TARGET="rules:#category-create.xhtml" TITLE="category-create" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#categories.xhtml:1" NAME="item1"
+   PATH="/categories.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="category-update::#category-update.xhtml"
+    NAME="output" PATH="/category-update.xhtml"
+    TARGET="rules:#category-update.xhtml" TITLE="category-update" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules::2" SHAPE="32,241,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules::2" NAME="item" model-entity="JSFProcessItem">
@@ -32,32 +38,50 @@
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules::3" SHAPE="32,353,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules::3" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="units::#units.xhtml" NAME="output"
+    PATH="/units.xhtml" TARGET="rules:#units.xhtml" TITLE="units" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#units.xhtml" PATH="/units.xhtml"
+  SHAPE="240,369,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#units.xhtml:0" NAME="item"
+   PATH="/units.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="unit-create::#unit-create.xhtml"
+    NAME="output" PATH="/unit-create.xhtml"
+    TARGET="rules:#unit-create.xhtml" TITLE="unit-create" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#units.xhtml:1" NAME="item1"
+   PATH="/units.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="unit-update::#unit-update.xhtml"
+    NAME="output" PATH="/unit-update.xhtml"
+    TARGET="rules:#unit-update.xhtml" TITLE="unit-update" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#stores.xhtml" PATH="/stores.xhtml"
+  SHAPE="240,257,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#stores.xhtml:0" NAME="item"
+   PATH="/stores.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="store-create::#store-create.xhtml"
     NAME="output" PATH="/store-create.xhtml"
     TARGET="rules:#store-create.xhtml" TITLE="store-create" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
- </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#units.xhtml" PATH="/units.xhtml"
-  SHAPE="240,369,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:#stores.xhtml" PATH="/stores.xhtml"
-  SHAPE="240,257,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:#category-create.xhtml"
-  PATH="/category-create.xhtml" SHAPE="448,129,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules::4" SHAPE="32,496,53,42" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules::4" NAME="item" model-entity="JSFProcessItem">
+  <PROCESS-ITEM ID="rules:#stores.xhtml:1" NAME="item1"
+   PATH="/stores.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="store-update::#store-update.xhtml"
     NAME="output" PATH="/store-update.xhtml"
     TARGET="rules:#store-update.xhtml" TITLE="store-update" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules::5" SHAPE="32,577,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules::5" NAME="item" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="units::#units.xhtml" NAME="output"
-    PATH="/units.xhtml" TARGET="rules:#units.xhtml" TITLE="units" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
- </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#category-create.xhtml"
+  PATH="/category-create.xhtml" SHAPE="448,129,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#store-update.xhtml"
   PATH="/store-update.xhtml" SHAPE="240,593,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#store-create.xhtml"
   PATH="/store-create.xhtml" SHAPE="240,705,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#category-update.xhtml"
+  PATH="/category-update.xhtml" SHAPE="464,273,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#unit-create.xhtml" PATH="/unit-create.xhtml"
+  SHAPE="464,897,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#unit-update.xhtml" PATH="/unit-update.xhtml"
+  SHAPE="464,1009,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

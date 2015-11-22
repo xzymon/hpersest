@@ -19,15 +19,15 @@
 			<h:form>
 				<h:panelGrid columns="2">
 					<h:outputLabel value="#{msgs['common.store.name.label']}" />
-					<h:inputText value="#{storeBean.store.name}" />
+					<h:inputText value="#{storeBean.modelBean.name}" />
 					<h:outputLabel value="#{msgs['common.store.city.label']}" />
-					<h:inputText value="#{storeBean.store.city}" />
+					<h:inputText value="#{storeBean.modelBean.city}" />
 					<h:outputLabel value="#{msgs['common.store.street.label']}" />
-					<h:inputText value="#{storeBean.store.street}" />
+					<h:inputText value="#{storeBean.modelBean.street}" />
 					<h:outputLabel value="#{msgs['common.store.number.label']}" />
-					<h:inputText value="#{storeBean.store.number}" />
+					<h:inputText value="#{storeBean.modelBean.number}" />
 				</h:panelGrid>
-				<h:commandButton action="#{storeBean.createStore()}" value="#{msgs['common.crud.create.button']}"/>
+				<h:commandButton action="#{storeBean.create()}" value="#{msgs['common.crud.create.button']}"/>
 			</h:form>
 		</ui:define>
 	</ui:composition>

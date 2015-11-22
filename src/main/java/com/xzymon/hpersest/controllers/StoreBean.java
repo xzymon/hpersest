@@ -21,74 +21,73 @@ public class StoreBean {
 	@Inject
 	private Logger logger;
 	
-	private Store store;
+	private Store modelBean;
 	
 	public StoreBean() {
-		this.store = new Store("", "", "", "");
+		this.modelBean = new Store("", "", "", "");
 	}
 	
-	public List<Store> getStores(){
-		logger.info("method getStores");
+	public List<Store> getAll(){
+		logger.debug("method getAll");
 		session.beginTransaction();
 		List<Store> result = (List<Store>) session.createCriteria(Store.class).list();
 		session.getTransaction().commit();
 		return result;
 	}
 	
-	public Store getStore(){
-		logger.info("method getStore");
-		logger.info(store.toString());
-		return store;
+	public Store getModelBean(){
+		logger.debug("method getModelBean");
+		logger.debug(modelBean.toString());
+		return modelBean;
 	}
 	
-	public String createStore(){
-		logger.info("method createStore");
+	public String create(){
+		logger.debug("method create");
 		session.beginTransaction();
-		session.persist(this.store);
-		logger.info("method createStore: store has id=" + this.store.getId());
+		session.persist(this.modelBean);
+		logger.debug("method create: modelBean has id=" + this.modelBean.getId());
 		session.getTransaction().commit();
-		logger.info("method createStore: store created, transaction commited");
+		logger.debug("method create: modelBean created, transaction commited");
 		return "stores";
 	}
 	
-	public String deleteStore(Store store){
-		logger.info("method deleteStore: before beginTransaction");
+	public String delete(Store store){
+		logger.debug("method delete: before beginTransaction");
 		session.beginTransaction();
 		session.delete(store);
 		session.getTransaction().commit();
-		logger.info("method deleteStore: after commit");
+		logger.debug("method delete: after commit");
 		return "stores";
 	}
 	
-	public String gotoUpdateStore(Store store){
-		logger.info("method gotoUpdateStore");
-		this.store = store;
+	public String gotoUpdate(Store store){
+		logger.debug("method gotoUpdate");
+		this.modelBean = store;
 		return "store-update";
 	}
 	
-	public String updateStore(){
-		logger.info("method updateStore: before beginTransaction");
+	public String update(){
+		logger.debug("method update: before beginTransaction");
 		session.beginTransaction();
-		logger.info("method updateStore: transaction began");
-		Store toUpdate = (Store) session.get(Store.class, store.getId());
-		logger.info("method updateStore: transaction began");
-		toUpdate.setId(store.getId());
-		toUpdate.setName(store.getName());
-		toUpdate.setCity(store.getCity());
-		toUpdate.setStreet(store.getStreet());
-		toUpdate.setNumber(store.getNumber());
-		logger.info("method updateStore: about to saveOrUpdate");
+		logger.debug("method update: transaction began");
+		Store toUpdate = (Store) session.get(Store.class, modelBean.getId());
+		logger.debug("method update: after database get");
+		toUpdate.setName(modelBean.getName());
+		toUpdate.setCity(modelBean.getCity());
+		toUpdate.setStreet(modelBean.getStreet());
+		toUpdate.setNumber(modelBean.getNumber());
+		logger.debug("method update: about to saveOrUpdate");
 		session.saveOrUpdate(toUpdate);
-		logger.info("method updateStore: about to commit transaction");
+		logger.debug("method update: about to commit transaction");
 		session.getTransaction().commit();
-		logger.info("method updateStore: after transaction commit");
+		logger.debug("method update: after transaction commit");
 		return "stores";
 	}
 	
 	@PreDestroy
 	public void closeSession(){
-		logger.info("method closeSession");
+		logger.debug("method closeSession");
 		session.close();
-		logger.info("method closeSession: session closed");
+		logger.debug("method closeSession: session closed");
 	}
 }

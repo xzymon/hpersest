@@ -18,6 +18,41 @@
 			<to-view-id>/category-create.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+		<navigation-rule>
+		<from-view-id>/categories.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>category-update</from-outcome>
+			<to-view-id>/category-update.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/stores.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>store-create</from-outcome>
+			<to-view-id>/store-create.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/stores.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>store-update</from-outcome>
+			<to-view-id>/store-update.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/units.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>unit-create</from-outcome>
+			<to-view-id>/unit-create.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/units.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>unit-update</from-outcome>
+			<to-view-id>/unit-update.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 	<navigation-rule>
 		<from-view-id></from-view-id>
 		<navigation-case>
@@ -37,20 +72,6 @@
 		<navigation-case>
 			<from-outcome>stores</from-outcome>
 			<to-view-id>/stores.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<from-view-id></from-view-id>
-		<navigation-case>
-			<from-outcome>store-create</from-outcome>
-			<to-view-id>/store-create.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<from-view-id></from-view-id>
-		<navigation-case>
-			<from-outcome>store-update</from-outcome>
-			<to-view-id>/store-update.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>

@@ -17,13 +17,14 @@
 		
 		<ui:define name="contentPanel">
 			<h:form>
+				<h:inputHidden value="#{categoryBean.modelBean.id}"/>
 				<h:panelGrid columns="2">
 					<h:outputLabel value="#{msgs['common.category.name.label']}" />
 					<h:inputText value="#{categoryBean.modelBean.name}" />
 					<h:outputText value="#{msgs['common.category.code.label']}" />
 					<h:inputText value="#{categoryBean.modelBean.code}" />
 				</h:panelGrid>
-				<h:commandButton action="#{categoryBean.create()}" value="#{msgs['common.crud.create.button']}"/>
+				<h:commandButton action="#{categoryBean.update()}" value="#{msgs['common.crud.update.link']}"/>
 			</h:form>
 		</ui:define>
 	</ui:composition>

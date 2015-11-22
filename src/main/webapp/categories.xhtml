@@ -17,7 +17,7 @@
 
 	<ui:define name="contentPanel">
 		<h:form>
-			<h:dataTable value="#{categoryBean.categories}" var="tableBean"
+			<h:dataTable value="#{categoryBean.all}" var="tableBean"
 				rowClasses="odd, even">
 				<h:column>
 					<f:facet name="header">#{msgs['dataTable.categories.header.id']}</f:facet>
@@ -34,9 +34,9 @@
 				<h:column>
 					<f:facet name="header">#{msgs['dataTable.common.actions.header']}</f:facet>
 					<h:commandLink
-						action="#{categoryBean.gotoUpdateCategory(tableBean)}"
+						action="#{categoryBean.gotoUpdate(tableBean)}"
 						value="#{msgs['common.crud.update.link']}" />
-					<h:commandLink action="#{categoryBean.deleteCategory(tableBean)}"
+					<h:commandLink action="#{categoryBean.delete(tableBean)}"
 						value="#{msgs['common.crud.delete.link']}" />
 				</h:column>
 			</h:dataTable>

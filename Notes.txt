@@ -38,3 +38,7 @@ Chyba przy wykorzystaniu beana @RequestScoped po prostu trzeba zrobić oddzielni
   		UPDATE_MODEL_VALUES - przesłanie danych z komponentów do widoku - z jakiegoś powodu powyższy komponent nie wysyła wartości (->id) do backing beana - może poprostu jej nie otrzymał
   		INVOKE_APPLICATION - tu powinna być wywołana akcja klikniętego commandButtona - jednakże kliknięty commandButton nie może być odtworzony (backingBean.id jest null) co oznacza że polecenie trafia w próżnię (-> navigation dostaje null) i poprostu widok musi być jeszcze raz wygenerowany 
   		RENDER_RESPONSE - renderuje widok tak jakby renderowany miał być create, a nie update
+  		
+
+Problem: co jest lepsze - przechowywać w controlerze (widoku) referencję do klasy modelu, czy skopiować pola klasy modelu do kontrolera i przed przenoszeniem do bazy kopiować stan na klasę modelu ? Dlaczego ?
+ [jak na to zareaguje mechanizm BeanValidation ?]

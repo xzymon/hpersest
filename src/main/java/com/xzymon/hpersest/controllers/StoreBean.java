@@ -45,7 +45,9 @@ public class StoreBean {
 		logger.info("method createStore");
 		session.beginTransaction();
 		session.persist(this.store);
+		logger.info("method createStore: store has id=" + this.store.getId());
 		session.getTransaction().commit();
+		logger.info("method createStore: store created, transaction commited");
 		return "stores";
 	}
 	
@@ -61,7 +63,7 @@ public class StoreBean {
 	public String gotoUpdateStore(Store store){
 		logger.info("method gotoUpdateStore");
 		this.store = store;
-		return "stores-create";
+		return "store-update";
 	}
 	
 	public String updateStore(){
@@ -80,11 +82,6 @@ public class StoreBean {
 		logger.info("method updateStore: about to commit transaction");
 		session.getTransaction().commit();
 		logger.info("method updateStore: after transaction commit");
-		return "stores";
-	}
-	
-	public String update(){
-		logger.info("method update:");
 		return "stores";
 	}
 	

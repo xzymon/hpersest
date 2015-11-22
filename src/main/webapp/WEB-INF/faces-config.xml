@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
-              version="2.2">
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
 	<application>
 		<locale-config>
 			<default-locale>en</default-locale>
@@ -12,35 +11,13 @@
 			<var>msgs</var>
 		</resource-bundle>
 	</application>
-	
 	<navigation-rule>
 		<from-view-id>/categories.xhtml</from-view-id>
 		<navigation-case>
-			<from-outcome>categories-create</from-outcome>
-			<to-view-id>/categories-create.xhtml</to-view-id>
+			<from-outcome>category-create</from-outcome>
+			<to-view-id>/category-create.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
-	<navigation-rule>
-		<from-view-id>/stores.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>stores-create</from-outcome>
-			<to-view-id>/stores-create.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	
-	<navigation-rule>
-		<from-view-id>/stores-create.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>stores-create</from-outcome>
-			<to-view-id>/stores-create.xhtml</to-view-id>
-		</navigation-case>
-		<navigation-case>
-			<from-outcome>stores</from-outcome>
-			<to-view-id>/stores.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	
 	<navigation-rule>
 		<from-view-id></from-view-id>
 		<navigation-case>
@@ -48,7 +25,6 @@
 			<to-view-id>/index.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
 	<navigation-rule>
 		<from-view-id></from-view-id>
 		<navigation-case>
@@ -66,15 +42,23 @@
 	<navigation-rule>
 		<from-view-id></from-view-id>
 		<navigation-case>
-			<from-outcome>units</from-outcome>
-			<to-view-id>/units.xhtml</to-view-id>
+			<from-outcome>store-create</from-outcome>
+			<to-view-id>/store-create.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
 		<from-view-id></from-view-id>
 		<navigation-case>
-			<from-outcome>tests</from-outcome>
-			<to-view-id>/tests.xhtml</to-view-id>
+			<from-outcome>store-update</from-outcome>
+			<to-view-id>/store-update.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	<navigation-rule>
+		<from-view-id></from-view-id>
+		<navigation-case>
+			<from-outcome>units</from-outcome>
+			<to-view-id>/units.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
 </faces-config>

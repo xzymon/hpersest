@@ -1,3 +1,8 @@
+v 0.0.3 stores CRUD works
+ - renamed view /stores-create.xhtml to /store-create.xhtml
+ - added view /store-update.xhtml
+ - renamed view /categories-create.xhtml to /category-create.xhtml
+
 v 0.0.2-SNAPSHOT4 updating from tests view
  - analyse task flow - how does it work, and why it works different from intention
 

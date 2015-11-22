@@ -17,15 +17,18 @@
 		
 		<ui:define name="contentPanel">
 			<h:form>
-				<h:inputHidden value="#{categoryBean.category.id}" rendered="#{categoryBean.category.id ne null}"/>
+				<h:inputHidden value="#{storeBean.store.id}"/>
 				<h:panelGrid columns="2">
-					<h:outputLabel value="#{msgs['common.category.name.label']}" />
-					<h:inputText value="#{categoryBean.category.name}" />
-					<h:outputText value="#{msgs['common.category.code.label']}" />
-					<h:inputText value="#{categoryBean.category.code}" />
+					<h:outputLabel value="#{msgs['common.store.name.label']}" />
+					<h:inputText value="#{storeBean.store.name}" />
+					<h:outputLabel value="#{msgs['common.store.city.label']}" />
+					<h:inputText value="#{storeBean.store.city}" />
+					<h:outputLabel value="#{msgs['common.store.street.label']}" />
+					<h:inputText value="#{storeBean.store.street}" />
+					<h:outputLabel value="#{msgs['common.store.number.label']}" />
+					<h:inputText value="#{storeBean.store.number}" />
 				</h:panelGrid>
-				<h:commandButton action="#{categoryBean.createCategory()}" value="#{msgs['create.category.button']}" rendered="#{categoryBean.category.id eq null}"/>
-				<h:commandButton action="#{categoryBean.updateCategory()}" value="#{msgs['update.category.button']}" rendered="#{categoryBean.category.id ne null}"/>
+				<h:commandButton action="#{storeBean.updateStore()}" value="#{msgs['common.crud.update.link']}"/>
 			</h:form>
 		</ui:define>
 	</ui:composition>

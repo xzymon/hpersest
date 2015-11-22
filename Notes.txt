@@ -19,3 +19,22 @@ Po ustawieniu bezpośredniego wstrzykiwania ServletContext zamiast FacesContext 
 
 Jednakże po usunięciu powyższego problemu nie działa update, nie ma też żadnej informacji o wyjątkach.
 Po prostu nic się nie dzieje.
+
+Chyba przy wykorzystaniu beana @RequestScoped po prostu trzeba zrobić oddzielnie widok create i oddzielnie widok update (bezwarunkowo renderujący id edytowanego obiektu)
+ -> tak, to rozwiązanie działa.
+ W wypadku warunkowego renderowania komponenetu przechowującego id problemem była "cykliczna" zależność w komponencie:
+ 	<h:inputHidden value="#{storeBean.store.id}" rendered="#{storeBean.store.id ne null}"/> 
+  - wyrenderowanie (->również przy odtwarzaniu) komponentu przechowującego id było zależne od obecności wartości id w backing bean
+  omówienie szczegółowe obu przypadków:
+  	przypadek 1: wybranie update'u wiersza powodujące nawigację z stores do stores-create
+  		formularz w stores przekazuje backing beana z wypełnioną wartością id do widoku stores-create
+  		zatem w momencie renderowania widoku wartość id jest znana (!null) zatem komponent spełnia warunek renderowania i zostaje wyrenderowany
+  		strona zostaje wyrenderowana zgodnie z założeniami jako strona dla przypadku update
+  	przypadek 2: kliknięcie przyciska update na stronie stores-create, wymagające odtworzenia widoku stores-create a potem podjęcia decyzji o dalszej nawigacji i logice
+  		formularz przesyła parametry, włącznie z id, na potrzeby odtworzenia widoku
+  		RESTORE_VIEW odbudowa drzewa widoku (odbudowa jest na podstawie pliku widoku XHTML? - więc odtwarza wszystkie komponenty)
+  		APPLY_REQUEST_PARAMETERS parametry są wpuszczane do drzewa i rozsyłane do komponentów w drzewie
+  		PROCESS_VALIDATIONS - nieistotne
+  		UPDATE_MODEL_VALUES - przesłanie danych z komponentów do widoku - z jakiegoś powodu powyższy komponent nie wysyła wartości (->id) do backing beana - może poprostu jej nie otrzymał
+  		INVOKE_APPLICATION - tu powinna być wywołana akcja klikniętego commandButtona - jednakże kliknięty commandButton nie może być odtworzony (backingBean.id jest null) co oznacza że polecenie trafia w próżnię (-> navigation dostaje null) i poprostu widok musi być jeszcze raz wygenerowany 
+  		RENDER_RESPONSE - renderuje widok tak jakby renderowany miał być create, a nie update

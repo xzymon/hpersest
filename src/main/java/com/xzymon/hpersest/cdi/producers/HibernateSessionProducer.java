@@ -12,9 +12,6 @@ import com.xzymon.hpersest.util.AppConstants;
 
 
 public class HibernateSessionProducer {
-
-	//@Inject
-	//private FacesContext facesContext;
 	
 	@Inject
 	private ServletContext servletCtx;
@@ -22,10 +19,6 @@ public class HibernateSessionProducer {
 	@Produces
 	@RequestScoped
 	public Session produceHibernateSession(){
-		//Map<String, Object> servletContextMap = FacesContext.getCurrentInstance().getExternalContext().getApplicationMap();
-		//SessionFactory factory = (SessionFactory) servletContextMap.get(AppConstants.HIBERNATE_SESSION_FACTORY_ATTR_NAME);
-		//return factory.openSession();
-		
 		SessionFactory factory = (SessionFactory) servletCtx.getAttribute(AppConstants.HIBERNATE_SESSION_FACTORY_ATTR_NAME);
 		return factory.openSession();
 	}

@@ -39,13 +39,13 @@
 					#{tableBean.number}
 				</h:column>
 				<h:column>
-					<f:facet name="header">#{msgs['actions.store.header']}</f:facet>
-					<h:commandLink action="#{storeBean.gotoUpdateStore(tableBean)}" value="#{msgs['update.store.button']}" />
-					<h:commandLink action="#{storeBean.deleteStore(tableBean)}" value="#{msgs['delete.store.link']}" />
+					<f:facet name="header">#{msgs['dataTable.common.actions.header']}</f:facet>
+					<h:commandLink action="#{storeBean.gotoUpdateStore(tableBean)}" value="#{msgs['common.crud.update.link']}" />
+					<h:commandLink action="#{storeBean.deleteStore(tableBean)}" value="#{msgs['common.crud.delete.link']}" />
 				</h:column>
 			</h:dataTable>
 			</h:form>
-			<h:button outcome="stores-create" value="#{msgs['create.store.button']}" />
+			<h:button outcome="store-create" value="#{msgs['common.crud.create.button']}" />
 		</ui:define>
 	</ui:composition>
 

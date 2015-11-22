@@ -17,7 +17,6 @@
 		
 		<ui:define name="contentPanel">
 			<h:form>
-				<h:inputHidden value="#{storeBean.store.id}" rendered="#{storeBean.store.id ne null}"/>
 				<h:panelGrid columns="2">
 					<h:outputLabel value="#{msgs['common.store.name.label']}" />
 					<h:inputText value="#{storeBean.store.name}" />
@@ -28,11 +27,7 @@
 					<h:outputLabel value="#{msgs['common.store.number.label']}" />
 					<h:inputText value="#{storeBean.store.number}" />
 				</h:panelGrid>
-				<!-- 
-				<h:commandButton action="#{storeBean.createStore()}" value="#{msgs['create.store.button']}" rendered="#{storeBean.store.id eq null}"/>
-				<h:commandButton action="#{storeBean.updateStore()}" value="#{msgs['update.store.button']}" rendered="#{storeBean.store.id ne null}"/>
-				 -->
-				<h:commandButton action="#{storeBean.update()}" value="#{msgs['update.store.button']}" rendered="#{storeBean.store.id ne null}"/>
+				<h:commandButton action="#{storeBean.createStore()}" value="#{msgs['common.crud.create.button']}"/>
 			</h:form>
 		</ui:define>
 	</ui:composition>

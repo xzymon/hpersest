@@ -32,16 +32,16 @@
 					#{tableBean.code}
 				</h:column>
 				<h:column>
-					<f:facet name="header">#{msgs['actions.category.header']}</f:facet>
+					<f:facet name="header">#{msgs['dataTable.common.actions.header']}</f:facet>
 					<h:commandLink
 						action="#{categoryBean.gotoUpdateCategory(tableBean)}"
-						value="#{msgs['update.category.button']}" />
+						value="#{msgs['common.crud.update.link']}" />
 					<h:commandLink action="#{categoryBean.deleteCategory(tableBean)}"
-						value="#{msgs['delete.category.link']}" />
+						value="#{msgs['common.crud.delete.link']}" />
 				</h:column>
 			</h:dataTable>
 		</h:form>
-		<h:button outcome="categories-create" value="#{msgs['create.category.button']}"/>
+		<h:button outcome="category-create" value="#{msgs['common.crud.create.button']}"/>
 	</ui:define>
 </ui:composition>
 

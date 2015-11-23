@@ -40,5 +40,7 @@ Chyba przy wykorzystaniu beana @RequestScoped po prostu trzeba zrobić oddzielni
   		RENDER_RESPONSE - renderuje widok tak jakby renderowany miał być create, a nie update
   		
 
-Problem: co jest lepsze - przechowywać w controlerze (widoku) referencję do klasy modelu, czy skopiować pola klasy modelu do kontrolera i przed przenoszeniem do bazy kopiować stan na klasę modelu ? Dlaczego ?
+Problem 1: co jest lepsze - przechowywać w controlerze (widoku) referencję do klasy modelu, czy skopiować pola klasy modelu do kontrolera i przed przenoszeniem do bazy kopiować stan na klasę modelu ? Dlaczego ?
  [jak na to zareaguje mechanizm BeanValidation ?]
+ 
+Problem 2: gdy w jednym request występuje kilka CDI beanów, a każdy bean posiada metodę @PreDestroy closeSession() to pierwszy zniszczony bean zamknie Session z hibernate a następne beany będą rzucać wyjątek że już nie ma Session

@@ -1,3 +1,5 @@
+v 0.0.4-SNAPSHOT2 development of purchases started
+
 v 0.0.4-SNAPSHOT1 products CR works
  - added view /products.xhtml
  - added view /product-create.xhtml [uses converters for Category & Unit]

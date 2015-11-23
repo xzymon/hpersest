@@ -61,5 +61,10 @@ public class Product {
 		this.unit = unit;
 	}
 
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", name=" + name + "]";
+	}
+
 	
 }

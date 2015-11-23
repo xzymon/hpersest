@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.xzymon</groupId>
 	<artifactId>hpersest</artifactId>
-	<version>0.0.4</version>
+	<version>0.0.4-SNAPSHOT1</version>
 	<packaging>war</packaging>
 	<name>hpersest</name>
 

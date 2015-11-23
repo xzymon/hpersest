@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	
+	<ui:composition template="/WEB-INF/resources/templates/standard.xhtml">
+	
+		<ui:define name="pageTitle">
+			
+		</ui:define>
+	
+		<ui:define name="leftPanel"></ui:define>
+		
+		<ui:define name="topTitle"></ui:define>
+		
+		<ui:define name="contentPanel">
+			<h:form>
+				<h:panelGrid columns="2">
+					<h:outputLabel value="#{msgs['common.product.name.label']}"/>
+					<h:inputText value="#{productBean.modelBean.name}" />
+					<h:outputLabel value="#{msgs['common.product.category.label']}"/>
+					<h:selectOneMenu value="#{productBean.modelBean.category}" converter="#{categoryConverter}">
+						<f:selectItems value="#{categoryBean.all}" var="category" itemValue="#{category}" itemLabel="#{category.name}"/>
+					</h:selectOneMenu>
+					<h:outputLabel value="#{msgs['common.product.unit.label']}" />
+					<h:selectOneMenu value="#{productBean.modelBean.unit}" converter="#{unitConverter}">
+						<f:selectItems value="#{unitBean.all}" var="unit" itemValue="#{unit}" itemLabel="#{unit.name}"/>
+					</h:selectOneMenu>
+				</h:panelGrid>
+				<h:commandButton action="#{productBean.create()}" value="#{msgs['common.crud.create.button']}" />
+			</h:form>
+		</ui:define>
+	</ui:composition>
+
+</html>

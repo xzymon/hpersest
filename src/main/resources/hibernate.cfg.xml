@@ -28,5 +28,6 @@
   <mapping class="com.xzymon.hpersest.model.Category"/>
   <mapping class="com.xzymon.hpersest.model.Store"/>
   <mapping class="com.xzymon.hpersest.model.Unit"/>
+  <mapping class="com.xzymon.hpersest.model.Product"/>
  </session-factory>
 </hibernate-configuration>

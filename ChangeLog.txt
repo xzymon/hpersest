@@ -1,3 +1,7 @@
+v 0.0.4-SNAPSHOT1 products CR works
+ - added view /products.xhtml
+ - added view /product-create.xhtml [uses converters for Category & Unit]
+
 v 0.0.4 categories & units CRUD works
  - added view /category-update.xhtml
  - added view /unit-create.xhtml

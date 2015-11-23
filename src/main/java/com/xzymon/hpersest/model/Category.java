@@ -51,4 +51,10 @@ public class Category {
 		this.code = code;
 	}
 
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", name=" + name + ", code=" + code + "]";
+	}
+	
+	
 }

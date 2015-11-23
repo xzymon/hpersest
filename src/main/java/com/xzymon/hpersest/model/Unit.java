@@ -61,4 +61,12 @@ public class Unit {
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+	@Override
+	public String toString() {
+		return "Unit [id=" + id + ", name=" + name + ", code=" + code + ", quantityDenominator=" + quantityDenominator
+				+ "]";
+	}
+	
+	
 }

@@ -56,6 +56,13 @@
 	<navigation-rule>
 		<from-view-id></from-view-id>
 		<navigation-case>
+			<from-outcome>product-create</from-outcome>
+			<to-view-id>/product-create.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id></from-view-id>
+		<navigation-case>
 			<from-outcome>home</from-outcome>
 			<to-view-id>/index.xhtml</to-view-id>
 		</navigation-case>
@@ -81,5 +88,11 @@
 			<to-view-id>/units.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-
+	<navigation-rule>
+		<from-view-id></from-view-id>
+		<navigation-case>
+			<from-outcome>products</from-outcome>
+			<to-view-id>/products.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 </faces-config>

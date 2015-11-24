@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 
 import com.xzymon.hpersest.model.Category;
 import com.xzymon.hpersest.model.Unit;
+import com.xzymon.hpersest.util.Outcomes;
 
 @Model
 public class UnitBean {
@@ -41,19 +42,19 @@ public class UnitBean {
 		session.beginTransaction();
 		session.save(this.modelBean);
 		session.getTransaction().commit();
-		return "units";
+		return Outcomes.UNITS;
 	}
 	
 	public String delete(Unit unit){
 		session.beginTransaction();
 		session.delete(unit);
 		session.getTransaction().commit();
-		return "units";
+		return Outcomes.UNITS;
 	}
 	
 	public String gotoUpdate(Unit unit){
 		this.modelBean = unit;
-		return "unit-update";
+		return Outcomes.UPDATE_UNIT;
 	}
 	
 	public String update(){
@@ -70,7 +71,7 @@ public class UnitBean {
 		logger.debug("method update: about to commit transaction");
 		session.getTransaction().commit();
 		logger.debug("method update: transaction commited");
-		return "units";
+		return Outcomes.UNITS;
 	}
 	
 	@PreDestroy

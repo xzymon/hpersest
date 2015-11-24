@@ -17,12 +17,53 @@
 			<from-outcome>category-create</from-outcome>
 			<to-view-id>/category-create.xhtml</to-view-id>
 		</navigation-case>
-	</navigation-rule>
-		<navigation-rule>
-		<from-view-id>/categories.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>category-update</from-outcome>
 			<to-view-id>/category-update.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/consumed.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>consumed-create</from-outcome>
+			<to-view-id>/consumed-create.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consumed-update</from-outcome>
+			<to-view-id>/consumed-update.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/mock-consumed.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>mock-consumed-create</from-outcome>
+			<to-view-id>/mock-consumed-create.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>mock-consumed-update</from-outcome>
+			<to-view-id>/mock-consumed-update.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/products.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>product-create</from-outcome>
+			<to-view-id>/product-create.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>product-update</from-outcome>
+			<to-view-id>/product-update.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/purchases.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>purchase-create</from-outcome>
+			<to-view-id>/purchase-create.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>purchase-update</from-outcome>
+			<to-view-id>/purchase-update.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
@@ -31,9 +72,6 @@
 			<from-outcome>store-create</from-outcome>
 			<to-view-id>/store-create.xhtml</to-view-id>
 		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<from-view-id>/stores.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>store-update</from-outcome>
 			<to-view-id>/store-update.xhtml</to-view-id>
@@ -45,9 +83,6 @@
 			<from-outcome>unit-create</from-outcome>
 			<to-view-id>/unit-create.xhtml</to-view-id>
 		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<from-view-id>/units.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>unit-update</from-outcome>
 			<to-view-id>/unit-update.xhtml</to-view-id>
@@ -59,6 +94,10 @@
 			<from-outcome>product-create</from-outcome>
 			<to-view-id>/product-create.xhtml</to-view-id>
 		</navigation-case>
+		<navigation-case>
+			<from-outcome>product-update</from-outcome>
+			<to-view-id>/product-update.xhtml</to-view-id>
+		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
 		<from-view-id></from-view-id>
@@ -66,33 +105,33 @@
 			<from-outcome>home</from-outcome>
 			<to-view-id>/index.xhtml</to-view-id>
 		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<from-view-id></from-view-id>
 		<navigation-case>
 			<from-outcome>categories</from-outcome>
 			<to-view-id>/categories.xhtml</to-view-id>
 		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<from-view-id></from-view-id>
+		<navigation-case>
+			<from-outcome>consumed</from-outcome>
+			<to-view-id>/consumed.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>mock-consumed</from-outcome>
+			<to-view-id>/mock-consumed.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>products</from-outcome>
+			<to-view-id>/products.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>purchases</from-outcome>
+			<to-view-id>/purchases.xhtml</to-view-id>
+		</navigation-case>
 		<navigation-case>
 			<from-outcome>stores</from-outcome>
 			<to-view-id>/stores.xhtml</to-view-id>
 		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<from-view-id></from-view-id>
 		<navigation-case>
 			<from-outcome>units</from-outcome>
 			<to-view-id>/units.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<from-view-id></from-view-id>
-		<navigation-case>
-			<from-outcome>products</from-outcome>
-			<to-view-id>/products.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 </faces-config>

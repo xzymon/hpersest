@@ -17,12 +17,12 @@ public class Product {
 	@Column(name="id_produkt")
 	private Long id;
 	@ManyToOne(optional=false, fetch=FetchType.EAGER)
-	@JoinColumn(name="id_kategorii", nullable=false, updatable=false)
+	@JoinColumn(name="id_kategorii", nullable=false, updatable=true)
 	private Category category;
 	@Column(name="nazwa", nullable=false, length=255)
 	private String name;
 	@ManyToOne(optional=false, fetch=FetchType.EAGER)
-	@JoinColumn(name="id_jednostki", nullable=false, updatable=false)
+	@JoinColumn(name="id_jednostki", nullable=false, updatable=true)
 	private Unit unit;
 	
 	public Product() {

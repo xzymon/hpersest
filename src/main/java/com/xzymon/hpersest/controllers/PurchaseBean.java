@@ -9,26 +9,27 @@ import javax.inject.Inject;
 import org.hibernate.Session;
 import org.slf4j.Logger;
 
-import com.xzymon.hpersest.model.Product;
+import com.xzymon.hpersest.model.Purchase;
 import com.xzymon.hpersest.util.Outcomes;
 
 @Model
-public class ProductBean {
+public class PurchaseBean {
+
 	@Inject
 	private Session session;
 	
 	@Inject
 	private Logger logger;
 
-	private Product modelBean;
+	private Purchase modelBean;
 	
-	public ProductBean() {
-		this.modelBean = new Product();
+	public PurchaseBean() {
+		// TODO Auto-generated constructor stub
 	}
 
-	public List<Product> getAll(){
+	public List<Purchase> getAll(){
 		session.beginTransaction();
-		List<Product> results = (List<Product>)session.createCriteria(Product.class).list();
+		List<Purchase> results = (List<Purchase>)session.createCriteria(Purchase.class).list();
 		session.getTransaction().commit();
 		return results;
 	}
@@ -37,35 +38,38 @@ public class ProductBean {
 		session.beginTransaction();
 		session.persist(modelBean);
 		session.getTransaction().commit();
-		return Outcomes.PRODUCTS;
+		return Outcomes.NEW_PURCHASE;
 	}
 	
-	public String delete(Product toDelete){
+	public String delete(Purchase toDelete){
 		session.beginTransaction();
 		session.delete(toDelete);
 		session.getTransaction().commit();
-		return Outcomes.PRODUCTS;
+		return Outcomes.PURCHASES;
 	}
 	
-	public String gotoUpdate(Product modelBean){
+	public String gotoUpdate(Purchase modelBean){
 		this.modelBean = modelBean;
-		return Outcomes.UPDATE_PRODUCT;
+		return Outcomes.UPDATE_PURCHASE;
 	}
 	
 	public String update(){
 		session.beginTransaction();
-		Product toUpdate = (Product) session.get(Product.class, modelBean.getId());
+		Purchase toUpdate = (Purchase) session.get(Purchase.class, modelBean.getId());
 		if(toUpdate!=null){
-			toUpdate.setName(modelBean.getName());
-			toUpdate.setCategory(modelBean.getCategory());
-			toUpdate.setUnit(modelBean.getUnit());
+			toUpdate.setProduct(modelBean.getProduct());
+			toUpdate.setStore(modelBean.getStore());
+			toUpdate.setPrice(modelBean.getPrice());
+			toUpdate.setQuantity(modelBean.getQuantity());
+			toUpdate.setDate(modelBean.getDate());
+			toUpdate.setComment(modelBean.getComment());
 			session.update(toUpdate);
 		}
 		session.getTransaction().commit();
-		return Outcomes.PRODUCTS;
+		return Outcomes.PURCHASES;
 	}
 	
-	public Product getModelBean(){
+	public Purchase getModelBean(){
 		return modelBean;
 	}
 	

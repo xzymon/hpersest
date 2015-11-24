@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	
+	<ui:composition template="/WEB-INF/resources/templates/standard.xhtml">
+	
+		<ui:define name="pageTitle">
+			
+		</ui:define>
+	
+		<ui:define name="leftPanel"></ui:define>
+		
+		<ui:define name="topTitle"></ui:define>
+		
+		<ui:define name="contentPanel">
+			<h:form>
+				<h:dataTable value="#{mockConsumedBean.all}" var="tableBean" columnClasses="odd, even">
+					<h:column>
+						<f:facet name="header">#{msgs['dataTable.mock.header.id']}</f:facet>
+						#{tableBean.id}
+					</h:column>
+					<h:column>
+						<f:facet name="header">#{msgs['dataTable.mock.header.product']}</f:facet>
+						#{tableBean.product.name}
+					</h:column>
+					<h:column>
+						<f:facet name="header">#{msgs['dataTable.mock.header.price']}</f:facet>
+						#{tableBean.price}
+					</h:column>
+					<h:column>
+						<f:facet name="header">#{msgs['dataTable.mock.header.consumedPart']}</f:facet>
+						<h:outputFormat value="#{msgs['dataTable.mock.format.consumedPart']}">
+							<f:param value="#{tableBean.consumedPart}"/>
+							<f:param value="#{tableBean.consumedNumerator}"/>
+							<f:param value="#{tableBean.consumedDenominator}"/>
+						</h:outputFormat>
+					</h:column>
+					<h:column>
+						<f:facet name="header">#{msgs['dataTable.mock.header.date']}</f:facet>
+						<h:outputText value="#{tableBean.date}" >
+							<f:convertDateTime pattern="dd.MM.yyyy"/>
+						</h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">#{msgs['dataTable.mock.header.comment']}</f:facet>
+						#{tableBean.comment}
+					</h:column>
+					<h:column>
+						<f:facet name="header">#{msgs['dataTable.common.actions.header']}</f:facet>
+						<h:commandLink action="#{mockConsumedBean.update(tableBean)}" value="#{msgs['common.crud.update.link']}" />
+						<h:commandLink action="#{mockConsumedBean.delete(tableBean)}" value="#{msgs['common.crud.delete.link']}" />
+					</h:column>
+				</h:dataTable>
+			</h:form>
+			<h:button outcome="mock-consumed-create" value="#{msgs['common.crud.create.button']}"/>
+		</ui:define>
+	</ui:composition>
+
+</html>

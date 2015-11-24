@@ -1,3 +1,9 @@
+v 0.0.4-SNAPSHOT3 during development of purchases, mocks, consumption
+ - added view /product-update.xhtml
+ - adding view /purchases.xhtml , /purchase-create.xhtml , /purchase-update.xhtml 
+ - adding view /mock-consumed.xhtml , /mock-consumed-create.xhtml , /mock-consumed-update.xhtml 
+ - adding view /consumed.xhtml , /consumed-create.xhtml , /consumed-update.xhtml 
+
 v 0.0.4-SNAPSHOT2 development of purchases started
 
 v 0.0.4-SNAPSHOT1 products CR works

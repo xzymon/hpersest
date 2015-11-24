@@ -11,6 +11,7 @@ import org.hibernate.Session;
 import org.slf4j.Logger;
 
 import com.xzymon.hpersest.model.Store;
+import com.xzymon.hpersest.util.Outcomes;
 
 @RequestScoped
 @Named
@@ -48,7 +49,7 @@ public class StoreBean {
 		logger.debug("method create: modelBean has id=" + this.modelBean.getId());
 		session.getTransaction().commit();
 		logger.debug("method create: modelBean created, transaction commited");
-		return "stores";
+		return Outcomes.STORES;
 	}
 	
 	public String delete(Store store){
@@ -57,13 +58,13 @@ public class StoreBean {
 		session.delete(store);
 		session.getTransaction().commit();
 		logger.debug("method delete: after commit");
-		return "stores";
+		return Outcomes.STORES;
 	}
 	
 	public String gotoUpdate(Store store){
 		logger.debug("method gotoUpdate");
 		this.modelBean = store;
-		return "store-update";
+		return Outcomes.UPDATE_STORE;
 	}
 	
 	public String update(){
@@ -81,7 +82,7 @@ public class StoreBean {
 		logger.debug("method update: about to commit transaction");
 		session.getTransaction().commit();
 		logger.debug("method update: after transaction commit");
-		return "stores";
+		return Outcomes.STORES;
 	}
 	
 	@PreDestroy

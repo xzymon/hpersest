@@ -9,26 +9,27 @@ import javax.inject.Inject;
 import org.hibernate.Session;
 import org.slf4j.Logger;
 
-import com.xzymon.hpersest.model.Product;
+import com.xzymon.hpersest.model.Consumption;
 import com.xzymon.hpersest.util.Outcomes;
 
 @Model
-public class ProductBean {
+public class ConsumedBean {
+
 	@Inject
 	private Session session;
 	
 	@Inject
 	private Logger logger;
 
-	private Product modelBean;
+	private Consumption modelBean;
 	
-	public ProductBean() {
-		this.modelBean = new Product();
+	public ConsumedBean() {
+		// TODO Auto-generated constructor stub
 	}
 
-	public List<Product> getAll(){
+	public List<Consumption> getAll(){
 		session.beginTransaction();
-		List<Product> results = (List<Product>)session.createCriteria(Product.class).list();
+		List<Consumption> results = (List<Consumption>)session.createCriteria(Consumption.class).list();
 		session.getTransaction().commit();
 		return results;
 	}
@@ -37,35 +38,37 @@ public class ProductBean {
 		session.beginTransaction();
 		session.persist(modelBean);
 		session.getTransaction().commit();
-		return Outcomes.PRODUCTS;
+		return Outcomes.CONSUMPTION;
 	}
 	
-	public String delete(Product toDelete){
+	public String delete(Consumption toDelete){
 		session.beginTransaction();
 		session.delete(toDelete);
 		session.getTransaction().commit();
-		return Outcomes.PRODUCTS;
+		return Outcomes.CONSUMPTION;
 	}
 	
-	public String gotoUpdate(Product modelBean){
+	public String gotoUpdate(Consumption modelBean){
 		this.modelBean = modelBean;
-		return Outcomes.UPDATE_PRODUCT;
+		return Outcomes.UPDATE_CONSUMPTION;
 	}
 	
 	public String update(){
 		session.beginTransaction();
-		Product toUpdate = (Product) session.get(Product.class, modelBean.getId());
+		Consumption toUpdate = (Consumption) session.get(Consumption.class, modelBean.getId());
 		if(toUpdate!=null){
-			toUpdate.setName(modelBean.getName());
-			toUpdate.setCategory(modelBean.getCategory());
-			toUpdate.setUnit(modelBean.getUnit());
+			toUpdate.setPurchase(modelBean.getPurchase());
+			toUpdate.setConsumedNumerator(modelBean.getConsumedNumerator());
+			toUpdate.setConsumedDenominator(modelBean.getConsumedDenominator());
+			toUpdate.setDate(modelBean.getDate());
+			toUpdate.setComment(modelBean.getComment());
 			session.update(toUpdate);
 		}
 		session.getTransaction().commit();
-		return Outcomes.PRODUCTS;
+		return Outcomes.CONSUMPTION;
 	}
 	
-	public Product getModelBean(){
+	public Consumption getModelBean(){
 		return modelBean;
 	}
 	

@@ -11,6 +11,7 @@ import org.hibernate.Session;
 import org.slf4j.Logger;
 
 import com.xzymon.hpersest.model.Category;
+import com.xzymon.hpersest.util.Outcomes;
 
 @RequestScoped
 @Named
@@ -42,19 +43,19 @@ public class CategoryBean {
 		session.beginTransaction();
 		session.save(this.modelBean);
 		session.getTransaction().commit();
-		return "categories";
+		return Outcomes.CATEGORIES;
 	}
 	
 	public String delete(Category category){
 		session.beginTransaction();
 		session.delete(category);
 		session.getTransaction().commit();
-		return "categories";
+		return Outcomes.CATEGORIES;
 	}
 	
 	public String gotoUpdate(Category category){
 		this.modelBean = category;
-		return "category-update";
+		return Outcomes.UPDATE_CATEGORY;
 	}
 	
 	public String update(){
@@ -70,7 +71,7 @@ public class CategoryBean {
 		logger.debug("method update: about to commit transaction");
 		session.getTransaction().commit();
 		logger.debug("method update: transaction commited");
-		return "categories";
+		return Outcomes.CATEGORIES;
 	}
 	
 	@PreDestroy

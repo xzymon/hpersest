@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	
+	<ui:composition template="/WEB-INF/resources/templates/standard.xhtml">
+	
+		<ui:define name="pageTitle">
+			
+		</ui:define>
+	
+		<ui:define name="leftPanel"></ui:define>
+		
+		<ui:define name="topTitle"></ui:define>
+		
+		<ui:define name="contentPanel">
+			<h:form>
+				<h:inputHidden value="#{purchaseBean.modelBean.id}" />
+				<h:panelGrid columns="2">
+					<h:outputLabel value="#{msgs['common.purchases.product.label']}" />
+					<h:selectOneMenu value="#{purchaseBean.modelBean.product}" converter="#{productConverter}">
+						<f:selectItems value="#{productBean.all}" var="product" itemValue="#{product}" itemLabel="#{product.name}"/>
+					</h:selectOneMenu>
+					<h:outputLabel value="#{msgs['common.purchases.store.label']}" />
+					<h:selectOneMenu value="#{purchaseBean.modelBean.store}" converter="#{storeConverter}">
+						<f:selectItems value="#{storeBean.all}" var="store" itemValue="#{store}" itemLabel="#{store.name}"/>
+					</h:selectOneMenu>
+					<h:outputLabel value="#{msgs['common.purchases.price.label']}" />
+					<h:inputText value="#{purchaseBean.modelBean.price}" converter="javax.faces.BigDecimal"/>
+					<h:outputLabel value="#{msgs['common.purchases.quantity.label']}" />
+					<h:inputText value="#{purchaseBean.modelBean.quantity}" converter="javax.faces.BigDecimal"/>
+					<h:outputLabel value="#{msgs['common.purchases.date.label']}" />
+					<h:inputText value="#{purchaseBean.modelBean.date}" converter="javax.faces.DateTime"/>
+					<h:outputLabel value="#{msgs['common.purchases.comment.label']}" />
+					<h:inputText value="#{purchaseBean.modelBean.comment}" />
+				</h:panelGrid>
+				<h:commandButton action="#{purchaseBean.update()}" value="#{msgs['common.crud.update.link']}" />
+			</h:form>
+		</ui:define>
+	</ui:composition>
+
+</html>

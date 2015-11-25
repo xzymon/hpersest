@@ -13,11 +13,11 @@
 	
 		<ui:define name="leftPanel"></ui:define>
 		
-		<ui:define name="topTitle"></ui:define>
+		<ui:define name="topTitle">#{msgs['topTitle.mock.all']}</ui:define>
 		
 		<ui:define name="contentPanel">
 			<h:form>
-				<h:dataTable value="#{mockConsumedBean.all}" var="tableBean" columnClasses="odd, even">
+				<h:dataTable value="#{mockConsumedBean.all}" var="tableBean" rowClasses="odd, even">
 					<h:column>
 						<f:facet name="header">#{msgs['dataTable.mock.header.id']}</f:facet>
 						#{tableBean.id}
@@ -50,7 +50,7 @@
 					</h:column>
 					<h:column>
 						<f:facet name="header">#{msgs['dataTable.common.actions.header']}</f:facet>
-						<h:commandLink action="#{mockConsumedBean.update(tableBean)}" value="#{msgs['common.crud.update.link']}" />
+						<h:commandLink action="#{mockConsumedBean.gotoUpdate(tableBean)}" value="#{msgs['common.crud.update.link']}" />
 						<h:commandLink action="#{mockConsumedBean.delete(tableBean)}" value="#{msgs['common.crud.delete.link']}" />
 					</h:column>
 				</h:dataTable>

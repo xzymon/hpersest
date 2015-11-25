@@ -13,10 +13,29 @@
 	
 		<ui:define name="leftPanel"></ui:define>
 		
-		<ui:define name="topTitle"></ui:define>
+		<ui:define name="topTitle">#{msgs['topTitle.consumed.update']}</ui:define>
 		
 		<ui:define name="contentPanel">
-			#{firstBean.msg}
+			<h:form>
+				<h:inputHidden value="#{consumedBean.modelBean.id}" />
+				<h:panelGrid columns="2">
+					<h:outputLabel value="#{msgs['common.consumed.purchase.label']}" />
+					<h:selectOneMenu value="#{consumedBean.modelBean.purchase}" converter="#{purchaseConverter}">
+						<f:selectItems value="#{purchaseBean.all}" var="purchase" itemValue="#{purchase}" itemLabel="#{purchase.name}"/>
+					</h:selectOneMenu>
+					<h:outputLabel value="#{msgs['common.consumed.consumedNumerator.label']}" />
+					<h:inputText value="#{consumedBean.modelBean.consumedNumerator}" converter="javax.faces.Integer"/>
+					<h:outputLabel value="#{msgs['common.consumed.consumedDenominator.label']}" />
+					<h:inputText value="#{consumedBean.modelBean.consumedDenominator}" converter="javax.faces.Integer" />
+					<h:outputLabel value="#{msgs['common.consumed.date.label']}" />
+					<h:inputText value="#{consumedBean.modelBean.date}">
+						<f:convertDateTime pattern="dd.MM.yyyy"/>
+					</h:inputText>
+					<h:outputLabel value="#{msgs['common.consumed.comment.label']}" />
+					<h:inputText value="#{consumedBean.modelBean.comment}" />
+				</h:panelGrid>
+				<h:commandButton action="#{consumedBean.update()}" value="#{msgs['common.crud.update.link']}" />
+			</h:form>
 		</ui:define>
 	</ui:composition>
 

@@ -46,7 +46,7 @@ public class PurchaseConverter implements Converter {
 		}
 		
 		if(modelValue instanceof Purchase){
-			return ((Purchase)modelValue).toString();
+			return String.valueOf(((Purchase)modelValue).getId());
 		} else {
 			throw new ConverterException(new FacesMessage(String.format("Passed value is not a Purchase: %s", modelValue)));
 		}

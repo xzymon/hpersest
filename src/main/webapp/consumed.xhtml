@@ -13,7 +13,7 @@
 
 	<ui:define name="leftPanel"></ui:define>
 
-	<ui:define name="topTitle"></ui:define>
+	<ui:define name="topTitle">#{msgs['topTitle.consumed.all']}</ui:define>
 
 	<ui:define name="contentPanel">
 		<h:form>
@@ -29,7 +29,6 @@
 				</h:column>
 				<h:column>
 					<f:facet name="header">#{msgs['dataTable.consumed.header.consumedPart']}</f:facet>
-					#{tableBean.consumedNumerator}
 					<h:outputFormat value="#{msgs['dataTable.consumed.format.consumedPart']}">
 						<f:param value="#{tableBean.consumedPart}"/>
 						<f:param value="#{tableBean.consumedNumerator}"/>
@@ -48,7 +47,7 @@
 				</h:column>
 				<h:column>
 					<f:facet name="header">#{msgs['dataTable.common.actions.header']}</f:facet>
-					<h:commandLink action="#{consumedBean.update(tableBean)}" value="#{msgs['common.crud.update.link']}" />
+					<h:commandLink action="#{consumedBean.gotoUpdate(tableBean)}" value="#{msgs['common.crud.update.link']}" />
 					<h:commandLink action="#{consumedBean.delete(tableBean)}" value="#{msgs['common.crud.delete.link']}" />
 				</h:column>
 			</h:dataTable>

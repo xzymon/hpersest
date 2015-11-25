@@ -13,10 +13,31 @@
 	
 		<ui:define name="leftPanel"></ui:define>
 		
-		<ui:define name="topTitle"></ui:define>
+		<ui:define name="topTitle">#{msgs['topTitle.mock.update']}</ui:define>
 		
 		<ui:define name="contentPanel">
-			#{firstBean.msg}
+			<h:form>
+				<h:inputHidden value="#{mockConsumedBean.modelBean.id}" />
+				<h:panelGrid columns="2">
+					<h:outputLabel value="#{msgs['common.mock.product.label']}" />
+					<h:selectOneMenu value="#{mockConsumedBean.modelBean.product}" converter="#{productConverter}">
+						<f:selectItems value="#{productBean.all}" var="product" itemValue="#{product}" itemLabel="#{product.name}"/>
+					</h:selectOneMenu>
+					<h:outputLabel value="#{msgs['common.mock.price.label']}" />
+					<h:inputText value="#{mockConsumedBean.modelBean.price}" />
+					<h:outputLabel value="#{msgs['common.mock.consumedNumerator.label']}" />
+					<h:inputText value="#{mockConsumedBean.modelBean.consumedNumerator}" converter="javax.faces.Integer" />
+					<h:outputLabel value="#{msgs['common.mock.consumedDenominator.label']}" />
+					<h:inputText value="#{mockConsumedBean.modelBean.consumedDenominator}" converter="javax.faces.Integer"/>
+					<h:outputLabel value="#{msgs['common.mock.date.label']}" />
+					<h:inputText value="#{mockConsumedBean.modelBean.date}" >
+						<f:convertDateTime pattern="dd.MM.yyyy"/>
+					</h:inputText>
+					<h:outputLabel value="#{msgs['common.mock.comment.label']}" />
+					<h:inputText value="#{mockConsumedBean.modelBean.comment}" />
+				</h:panelGrid>
+				<h:commandButton action="#{mockConsumedBean.update()}" value="#{msgs['common.crud.update.link']}" />
+			</h:form>
 		</ui:define>
 	</ui:composition>
 

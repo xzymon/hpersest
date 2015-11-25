@@ -8,6 +8,10 @@
 	<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/persest</property>
 	<property name="hibernate.connection.username">hpersest</property>
 	<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+	<!-- Use utf8 encoding while contacting with database -->
+	<property name="hibernate.connection.CharSet">utf8</property>
+	<property name="hibernate.connection.characterEncoding">utf8</property>
+	<property name="hibernate.connection.useUnicode">true</property>
   <!-- 
   <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
    -->
@@ -29,5 +33,8 @@
   <mapping class="com.xzymon.hpersest.model.Store"/>
   <mapping class="com.xzymon.hpersest.model.Unit"/>
   <mapping class="com.xzymon.hpersest.model.Product"/>
+  <mapping class="com.xzymon.hpersest.model.Purchase"/>
+  <mapping class="com.xzymon.hpersest.model.MockConsumption"/>
+  <mapping class="com.xzymon.hpersest.model.Consumption"/>
  </session-factory>
 </hibernate-configuration>

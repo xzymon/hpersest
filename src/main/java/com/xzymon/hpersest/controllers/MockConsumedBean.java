@@ -24,7 +24,7 @@ public class MockConsumedBean {
 	private MockConsumption modelBean;
 	
 	public MockConsumedBean() {
-		// TODO Auto-generated constructor stub
+		this.modelBean = new MockConsumption();
 	}
 
 	public List<MockConsumption> getAll(){

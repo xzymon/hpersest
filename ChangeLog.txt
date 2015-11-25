@@ -1,3 +1,10 @@
+v 0.0.5 all basic functionalities work
+ - added view /purchases.xhtml , /purchase-create.xhtml , /purchase-update.xhtml 
+ - added view /mock-consumed.xhtml , /mock-consumed-create.xhtml , /mock-consumed-update.xhtml 
+ - added view /consumed.xhtml , /consumed-create.xhtml , /consumed-update.xhtml 
+ - topTitle set in each view file
+ - Hibernate uses utf8 encoding in contact with database 
+
 v 0.0.4-SNAPSHOT3 during development of purchases, mocks, consumption
  - added view /product-update.xhtml
  - adding view /purchases.xhtml , /purchase-create.xhtml , /purchase-update.xhtml 

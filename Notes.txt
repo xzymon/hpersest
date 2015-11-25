@@ -44,3 +44,15 @@ Problem 1: co jest lepsze - przechowywać w controlerze (widoku) referencję do
  [jak na to zareaguje mechanizm BeanValidation ?]
  
 Problem 2: gdy w jednym request występuje kilka CDI beanów, a każdy bean posiada metodę @PreDestroy closeSession() to pierwszy zniszczony bean zamknie Session z hibernate a następne beany będą rzucać wyjątek że już nie ma Session
+
+Problem 3: formularze wysyłają do bazy dane bez polskich znaków - tzn. zamiast znaku polskiego wysyłane jest '?'
+			przy czym wygląda na to że problem jest na linii Hibernate-baza danych. PersistenceContext na pewno otrzymuje dane przynajmniej wyglądające jak znaki polskie
+			 - dane pobrane z cache'a pierwszego poziomu podczas requesta wstawiającego zawierają polskie znaki - może winą jest inny encoding w javie a inny w bazie ?
+		- na pewno problemu nie rozwiązuje zmiana typu dokumentu z DOCTYPE na xml
+Rozwiązanie problemu 3: trzeba nakazać Hibernate komunikaję z bazą danych z zastosowaniem utf8
+ - do pliku konfiguracyjnego Hibernate należy dodać linie:
+	<property name="hibernate.connection.CharSet">utf8</property>
+	<property name="hibernate.connection.characterEncoding">utf8</property>
+	<property name="hibernate.connection.useUnicode">true</property>
+	
+		 

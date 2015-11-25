@@ -24,7 +24,7 @@ public class PurchaseBean {
 	private Purchase modelBean;
 	
 	public PurchaseBean() {
-		// TODO Auto-generated constructor stub
+		this.modelBean = new Purchase();
 	}
 
 	public List<Purchase> getAll(){
@@ -38,7 +38,7 @@ public class PurchaseBean {
 		session.beginTransaction();
 		session.persist(modelBean);
 		session.getTransaction().commit();
-		return Outcomes.NEW_PURCHASE;
+		return Outcomes.PURCHASES;
 	}
 	
 	public String delete(Purchase toDelete){

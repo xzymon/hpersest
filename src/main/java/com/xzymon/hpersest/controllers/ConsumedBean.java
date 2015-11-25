@@ -24,7 +24,7 @@ public class ConsumedBean {
 	private Consumption modelBean;
 	
 	public ConsumedBean() {
-		// TODO Auto-generated constructor stub
+		this.modelBean = new Consumption();
 	}
 
 	public List<Consumption> getAll(){

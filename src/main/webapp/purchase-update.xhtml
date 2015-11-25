@@ -13,7 +13,7 @@
 	
 		<ui:define name="leftPanel"></ui:define>
 		
-		<ui:define name="topTitle"></ui:define>
+		<ui:define name="topTitle">#{msgs['topTitle.purchases.update']}</ui:define>
 		
 		<ui:define name="contentPanel">
 			<h:form>
@@ -32,7 +32,9 @@
 					<h:outputLabel value="#{msgs['common.purchases.quantity.label']}" />
 					<h:inputText value="#{purchaseBean.modelBean.quantity}" converter="javax.faces.BigDecimal"/>
 					<h:outputLabel value="#{msgs['common.purchases.date.label']}" />
-					<h:inputText value="#{purchaseBean.modelBean.date}" converter="javax.faces.DateTime"/>
+					<h:inputText value="#{purchaseBean.modelBean.date}">
+						<f:convertDateTime pattern="dd.MM.yyyy" type="date"/>
+					</h:inputText>
 					<h:outputLabel value="#{msgs['common.purchases.comment.label']}" />
 					<h:inputText value="#{purchaseBean.modelBean.comment}" />
 				</h:panelGrid>
